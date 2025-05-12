@@ -28,6 +28,5 @@ jobs:
           context: .  # Build from the current directory
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/test-app:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/test-app:working
+            ${{ secrets.DOCKERHUB_USERNAME }}/test-app:notworking
             ${{ secrets.DOCKERHUB_USERNAME }}/test-app:${{ github.sha }} 
