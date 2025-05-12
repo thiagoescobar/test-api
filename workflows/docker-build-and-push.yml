@@ -29,5 +29,5 @@ jobs:
           push: true
           tags: |
             ${{ secrets.DOCKERHUB_USERNAME }}/test-app:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/test-app:works
+            ${{ secrets.DOCKERHUB_USERNAME }}/test-app:working
             ${{ secrets.DOCKERHUB_USERNAME }}/test-app:${{ github.sha }} 
