@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def index():
-    return jsonify(message="Flask app is running"), 404
+    return jsonify(message="Flask app is NOT running"), 404
 
 @app.route('/health/live', methods=['GET'])
 def healthz():
