@@ -9,7 +9,7 @@ def index():
 
 @app.route('/health/live', methods=['GET'])
 def healthz():
-    return '', 200
+    return jsonify(status="ok"), 200
 
 @app.route('/health/ready', methods=['GET'])
 def readyz():
