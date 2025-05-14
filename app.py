@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def index():
-    return jsonify(message="Flask app is running"), 200
+    return '', 200
 
 @app.route('/health/live', methods=['GET'])
 def healthz():
