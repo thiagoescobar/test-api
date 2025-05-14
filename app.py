@@ -5,15 +5,15 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def index():
-    return jsonify(message="Flask app is NOT running"), 404
+    return jsonify({'error': 'Not Found'}), 404
 
 @app.route('/health/live', methods=['GET'])
 def healthz():
-    return jsonify(status="ok"), 404
+    return jsonify({'error': 'Not Found'}), 404
 
 @app.route('/health/ready', methods=['GET'])
 def readyz():
-    return jsonify(status="ready"), 404
+    return jsonify({'error': 'Not Found'}), 404
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
