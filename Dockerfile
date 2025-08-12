@@ -15,7 +15,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5000
 
 ENV OTEL_SERVICE_NAME="test-app"
-ENV OTEL_EXPORTER_OTLP_ENDPOINT="http://simplest-jaeger-collector.observability.svc.cluster.local:4318"
+ENV OTEL_EXPORTER_OTLP_ENDPOINT="http://simplest-jaeger-collector.observability.svc.cluster.local:4317"
 
 # Set environment variables (if needed)
 ENV FLASK_APP=app.py
