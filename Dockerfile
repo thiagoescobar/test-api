@@ -8,14 +8,18 @@ WORKDIR /app
 COPY . /app
 
 # Install any dependencies
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Expose the port the Flask app runs on
 EXPOSE 5000
+
+ENV OTEL_SERVICE_NAME="test-app"
+ENV OTEL_EXPORTER_OTLP_ENDPOINT="http://simplest-jaeger-collector.observability.svc.cluster.local:4318"
 
 # Set environment variables (if needed)
 ENV FLASK_APP=app.py
 ENV FLASK_RUN_HOST=0.0.0.0
 
 # Define the command to run the application
-CMD ["flask", "run"]
+CMD ["opentelemetry-instrument", "flask", "run", "--host=0.0.0.0"]
